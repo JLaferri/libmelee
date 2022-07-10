@@ -72,7 +72,7 @@ class SlippstreamWorker:
             logging.error(e)
             return False
         try:
-            for _ in range(4):
+            for _ in range(60):
                 event = self._host.service(1000)
                 if event.type == enet.EVENT_TYPE_CONNECT:
                     self._send_handshake()
